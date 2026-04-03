@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "inventory")
@@ -31,4 +32,8 @@ public class Inventory {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
+
+    @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Item> items;
 }

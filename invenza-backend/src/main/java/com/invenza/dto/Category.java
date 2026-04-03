@@ -1,10 +1,13 @@
 package com.invenza.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "category")
@@ -22,4 +25,8 @@ public class Category {
     private String name;
 
     private Integer defaultShelfLifeDays;
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Item> items;
 }
