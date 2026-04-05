@@ -36,4 +36,8 @@ public class Inventory {
     @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Item> items;
+
+    @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<UserInventory> userInventories;
 }
