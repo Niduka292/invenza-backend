@@ -1,4 +1,4 @@
-package com.invenza.dto;
+package com.invenza.model;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

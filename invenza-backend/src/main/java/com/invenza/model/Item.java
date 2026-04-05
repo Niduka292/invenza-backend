@@ -1,4 +1,4 @@
-package com.invenza.dto;
+package com.invenza.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
